@@ -25,17 +25,10 @@ export class ApiService {
     });
   }
 
-  add(content: IPost) {
-    this.http.post(this.api, content).subscribe(() => this.loadAll());
-  }
-
   like(id: number) {
     this.http.post(`${this.api}/${id}/like`, {}).subscribe(() => this.loadAll());
   }
 
-  delete(id: number) {
-    this.http.delete(`${this.api}/${id}`).subscribe(() => this.loadAll());
-  }
 
   setFilter(value: string) {
     this.filter.set(value);
