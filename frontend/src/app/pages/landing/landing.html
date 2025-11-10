@@ -1,23 +1,32 @@
 <div class="container pt-5">
   <div class="mb-3">
     <label for="filter-input" class="form-label">Filter</label>
-    <input type="text" class="form-control" id="filter-input" placeholder="Filter...">
+    <input type="text" class="form-control" id="filter-input" placeholder="Filter..."
+      (input)="filterChanged($event)"
+    >
   </div>
 
   <div class="row">
-    <div class="col-12 col-md-6 col-lg-4">
-      <app-post-card />
+    <div *ngFor="let post of apiService.contents()" class="col-12 col-md-6 col-lg-4">
+      <app-post-card [content]="post" (liked)="apiService.like(post.id!)" />
     </div>
   </div>
 
   <div class="mt-5">
     <nav aria-label="Page navigation example">
       <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        <li class="page-item">
+          <button class="page-link" (click)="prevPage()" [disabled]="apiService.page() === 1">Previous</button>
+        </li>
+        <li class="d-flex align-items-center">
+          <span class="p-2">{{ apiService.page() }} / {{ apiService.totalPages }}</span>
+        </li>        
+        <li class="page-item">
+          <button class="page-link" (click)="nextPage()"
+            [disabled]="apiService.page() * apiService.pageSize() >= apiService.total()">
+            Next
+          </button>
+        </li>
       </ul>
     </nav>
   </div>

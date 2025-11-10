@@ -1,8 +1,17 @@
 <div class="card w-full">
-  <img src="..." class="card-img-top" alt="...">
+  <img [src]="content.imageUrl[imgIndex]" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title">{{ content.title }}</h5>
+    <p class="card-text">
+      {{ content.contents }}
+    </p>
+    <div class="d-flex justify-content-between">
+      <button (click)="onLike()">
+        {{ content.likes ? "Unlike" : "Like" }}
+      </button>
+      <button *ngIf="(content.imageUrl?.length ?? 1) > 1 && imgIndex < (content.imageUrl?.length ?? 1) - 1" class="" (click)="onSkip()">
+        Skip
+      </button>
+    </div>    
   </div>
 </div>

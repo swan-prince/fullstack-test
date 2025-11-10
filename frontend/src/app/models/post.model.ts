@@ -1,7 +1,7 @@
 export interface IPost {
   id: number;
   title: string;
-  images: Array<string>;
+  imageUrl: Array<string>;
   likes: boolean;
   contents: string;
 }
