@@ -1,0 +1,49 @@
+# Application Phase 2 – Technical Practical Assessment
+
+This is a full-stack **Technical Practical Assessment** built with:
+
+- **Frontend:** Angular 20
+- **Backend:** Node.js (Express)  
+- **Database:** SQLite3  
+
+It allows users to view and manage post cards. Each post card can have images, descriptions, and interactions like "like" or "skip".
+
+---
+
+## Features
+
+- Display a list of tasks with details.
+- Child components (`app-post-card`) for modular UI.
+- Like/Skip functionality for tasks.
+- Persistent storage using SQLite3.
+- Full REST API for task management.
+- Modern Angular 20 architecture using **standalone components** and `ApplicationConfig`.
+
+---
+
+## Tech Stack
+
+| Layer       | Technology         |
+|------------|------------------|
+| Frontend   | Angular 20        |
+| Backend    | Node.js + Express |
+| Database   | SQLite3           |
+| HTTP Client| Angular HttpClient|
+
+---
+
+## Prerequisites
+
+- Node.js >= 18.x  
+- npm >= 9.x  
+- Angular CLI >= 16.x  
+
+---
+
+## Getting Started
+
+### **1. Clone the repository**
+
+```bash
+git clone https://github.com/swan-prince/fullstack-test
+cd task-app
