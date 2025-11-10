@@ -42,6 +42,9 @@ It allows users to view and manage post cards. Each post card can have images, d
 
 ## Getting Started
 
+Please run "npm start" on frontend and backend
+
+
 ### **1. Clone the repository**
 
 ```bash
